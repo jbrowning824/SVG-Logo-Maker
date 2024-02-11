@@ -46,24 +46,13 @@ async function promptUser() {
         console.error('Invalid selection');
         break;
     }
-    //create the svg based on user input in 300px x 200px container
-    const svgContent = `
-        <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
-        ${shape.render()}
-        <text x="${shape.textPosition.x}" 
-            y="${shape.textPosition.y}" font-family="Arial" 
-            font-size="40" 
-            fill="${answers.textColor}" 
-            text-anchor="middle">
-        ${answers.logoText}
-        </text>
-        </svg>
-    `;
 
     //write svg to file
-    fs.writeFile('logo.svg', svgContent, (err) => {
-        console.error(err);
-    })
+    fs.writeFile('logo.svg', 
+        shape.createSVG(answers.textColor, 
+        answers.logoText, shape.render()), (err) => {
+            console.error(err);
+        });
 }
 
 async function init(){
