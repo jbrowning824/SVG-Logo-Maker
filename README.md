@@ -42,4 +42,6 @@ This project is licensed under the MIT License. For more information, see the li
 ## Repo
 
 ![Sample SVG Logo](image.png)
-Checkout my project [SVG Logo Maker](https://github.com/jbrowning824/SVG-Logo-Maker)
+Checkout my project repo [SVG Logo Maker](https://github.com/jbrowning824/SVG-Logo-Maker)
+
+Checkout the [walkthrough](https://drive.google.com/file/d/1tzJE4gZka2KBTSOyMqbd4inNJ2sk6K_x/view)
