@@ -5,6 +5,7 @@ const { Circle, Triangle, Square } = require('./lib/shapes');
 
 async function promptUser() {
     
+    // walk user through required Logo creation info
     const answers = await inquirer.prompt([
         {
             type: 'list',
@@ -29,9 +30,10 @@ async function promptUser() {
             message: 'Enter the text color:',
         },
     ]);
-    console.log(answers);
+
 
     let shape;
+    // switch case to create shape based on user input
     switch (answers.shapeType) {
     case 'Square':
         shape = new Square(answers.shapeColor, 150, 135);
@@ -51,10 +53,13 @@ async function promptUser() {
     fs.writeFile('logo.svg', 
         shape.createSVG(answers.textColor, 
         answers.logoText, shape.render()), (err) => {
-            console.error(err);
+            if(err){
+                console.error(err);
+            }
         });
 }
 
+// start prompts
 async function init(){
     promptUser();
 }
